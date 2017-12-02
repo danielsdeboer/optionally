@@ -1,0 +1,40 @@
+{
+    "name": "aviator/optionally",
+    "type": "library",
+    "description": "A container for keyed booleans.",
+    "keywords": [
+        "php",
+        "php7",
+        "options"
+    ],
+    "homepage": "https://github.com/danielsdeboer/optionally",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Daniel S. Deboer",
+            "email": "daniel.s.deboer@gmail.com",
+            "homepage": "https://aviatorcreative.ca",
+            "role": "Developer"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Aviator\\Optionally\\": "src/"
+        }
+    },
+    "require": {
+        "php": ">=7.0.0",
+        "aviator/makeable": "^0.1.0"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "~6.4.0"
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Tests\\": "tests/"
+        }
+    },
+    "scripts": {
+        "test": "phpunit"
+    }
+}
