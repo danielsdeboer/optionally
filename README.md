@@ -24,12 +24,19 @@ composer test
 
 ### Usage
 
-Create a new instance with an array. The array should have string keys and boolean values. It's important to note that any integer keys will be silently discarded without raising an exception or error: 
+Instantiate `Optionally` with or without an array. You can add the array later with `add()` or `replaceWith()` (see below).
+ 
+The array should have string keys and boolean values. It's important to note that any pairs with non-string keys and non-boolean values will be silently discarded—they will __not__ be coerced.
 
 ```php
-$options = Optionally::make(['option1' => true, 'option2' => false, 0 => false]);
+$options = Optionally::make([
+    'option1' => true, 
+    'option2' => false, 
+    0 => false, 
+    'test' => 'value'
+]);
 
-// [0 => false] will be discarded.
+// [0 => false] and ['test' => 'value'] will be discarded.
 ```
 
 Get the underlying array with `all()`:

@@ -23,11 +23,19 @@ class OptionallyTest extends TestCase
     }
 
     /** @test */
-    public function it_ignores_integer_keys_silently ()
+    public function it_ignores_non_string_keys_silently ()
     {
         $options = Optionally::make($this->options + $this->intOption);
 
         $this->assertSame($this->options, $options->all());
+    }
+
+    /** @test */
+    public function it_ignores_non_boolean_values_silently ()
+    {
+        $options = Optionally::make(['test' => 'string']);
+
+        $this->assertSame([], $options->all());
     }
 
     /** @test */

@@ -137,7 +137,7 @@ class Optionally implements Optional
     protected function setOptions (array $options)
     {
         foreach ($options as $key => $value) {
-            if (is_string($key)) {
+            if (is_string($key) && is_bool($value)) {
                 $this->set($key, $value);
             }
         }
